@@ -19,6 +19,9 @@ public class JavaArrays {
     public static void main(String[] args) {
         ArrayList<String> dynamicList = new ArrayList();
         int[] setNumberArray = new int[12];
+        
+        int index;
+        
         Scanner input;
         String userWord;
                        
@@ -41,9 +44,14 @@ public class JavaArrays {
             
         }
         
-        for(int i = 0; i <= dynamicList.size() - 1; i++) {
-            System.out.print(dynamicList.get(i).length() + " ");
-            System.out.println(dynamicList.get(i));
+        for(int j = 0; j <= dynamicList.size() - 1; j++) {
+            index = dynamicList.get(j).indexOf("t");
+            while(index >= 0) {
+                System.out.print(index + " ");
+                index = dynamicList.get(j).indexOf("t", index + 1);
+            }
+            System.out.print("\n" + dynamicList.get(j).length() + " ");
+            System.out.println(dynamicList.get(j));
                      
         }
         dynamicList.sort(null);
